@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { GraduationCapIcon } from "lucide-react";
 
+import { SchoolLogo } from "@/components/brand/school-logo";
 import { AdminNav } from "./admin-nav";
 import { SignOutButton } from "./sign-out-button";
 
@@ -17,12 +17,17 @@ export function AdminShell({
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4">
           <Link
             href="/admin"
-            className="flex items-center gap-2 font-semibold tracking-tight"
+            className="flex min-w-0 items-center gap-3 font-semibold tracking-tight"
           >
-            <span className="bg-pdp-orange/10 text-pdp-orange inline-flex size-8 items-center justify-center rounded-md">
-              <GraduationCapIcon className="size-4" />
+            <span className="flex h-10 w-28 shrink-0 items-center sm:w-32">
+              <SchoolLogo
+                priority
+                className="h-auto w-full object-contain"
+              />
             </span>
-            <span>PDP Quản lý chứng nhận</span>
+            <span className="border-border truncate border-l pl-3">
+              PDP Quản lý chứng nhận
+            </span>
           </Link>
           <div className="flex items-center gap-3">
             {email ? (

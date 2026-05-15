@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { GraduationCapIcon, LockIcon } from "lucide-react";
+import { LockIcon } from "lucide-react";
 
+import { SchoolLogo } from "@/components/brand/school-logo";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { LoginForm } from "./login-form";
 
@@ -26,12 +27,17 @@ export default async function LoginPage({
       <div className="w-full max-w-md">
         <Link
           href="/"
-          className="text-muted-foreground hover:text-foreground mx-auto mb-6 flex w-fit items-center gap-2 text-sm"
+          className="text-muted-foreground hover:text-foreground mx-auto mb-6 flex w-fit items-center gap-3 text-sm"
         >
-          <span className="bg-pdp-orange/10 text-pdp-orange inline-flex size-8 items-center justify-center rounded-md">
-            <GraduationCapIcon className="size-4" aria-hidden />
+          <span className="flex h-12 w-36 shrink-0 items-center">
+            <SchoolLogo
+              priority
+              className="h-auto w-full object-contain"
+            />
           </span>
-          PDP · FPT Polytechnic TP.HCM
+          <span className="border-border border-l pl-3">
+            PDP · TP.HCM
+          </span>
         </Link>
 
         <Card className="border-border/60 shadow-sm ring-1 ring-black/5">

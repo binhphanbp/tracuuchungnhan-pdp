@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { GraduationCapIcon } from "lucide-react";
+
+import { SchoolLogo } from "@/components/brand/school-logo";
 
 export function SiteHeader() {
   return (
@@ -7,12 +8,17 @@ export function SiteHeader() {
       <div className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4">
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold tracking-tight"
+          className="flex min-w-0 items-center gap-3 font-semibold tracking-tight"
         >
-          <span className="bg-pdp-orange/10 text-pdp-orange inline-flex size-8 items-center justify-center rounded-md">
-            <GraduationCapIcon className="size-4" />
+          <span className="flex h-10 w-28 shrink-0 items-center sm:w-32">
+            <SchoolLogo
+              priority
+              className="h-auto w-full object-contain"
+            />
           </span>
-          <span className="hidden sm:block">PDP · FPT Polytechnic TP.HCM</span>
+          <span className="border-border hidden border-l pl-3 sm:block">
+            PDP · FPT Polytechnic TP.HCM
+          </span>
           <span className="sm:hidden">PDP</span>
         </Link>
         <nav className="text-muted-foreground flex items-center gap-4 text-sm">
