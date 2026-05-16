@@ -1,18 +1,12 @@
 import { headers } from "next/headers";
 import Link from "next/link";
-import {
-  CheckCircle2Icon,
-  SearchXIcon,
-} from "lucide-react";
+import { CheckCircle2Icon, SearchXIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CertificateImagePreview } from "@/components/public/certificate-image-preview";
 import { LookupForm } from "@/components/public/lookup-form";
-import {
-  DEFAULT_STUDENT_CODE_PATTERN,
-  studentCodeSchema,
-} from "@/lib/validation/student-code";
+import { studentCodeSchema } from "@/lib/validation/student-code";
 import type { LookupApiResponse } from "@/types/certificate";
 
 type SearchParams = Promise<{ code?: string }>;
@@ -84,7 +78,10 @@ export default async function LookupResultPage({
   const issueDate = new Date(cert.issue_date).toLocaleDateString("vi-VN");
 
   return (
-    <ResultShell heading="Chúc mừng bạn đã nhận được chứng nhận!" tone="success">
+    <ResultShell
+      heading="Chúc mừng bạn đã nhận được chứng nhận!"
+      tone="success"
+    >
       <Card className="border-pdp-orange/30 ring-pdp-orange/5 overflow-hidden ring-1">
         {/* Status banner */}
         <div className="border-pdp-orange/20 bg-pdp-orange/5 flex items-center gap-2 border-b px-6 py-3">
@@ -253,4 +250,3 @@ async function fetchLookup(studentCode: string): Promise<LookupApiResponse> {
 }
 
 // Re-export the default pattern so the page docstring can reference it.
-export { DEFAULT_STUDENT_CODE_PATTERN };

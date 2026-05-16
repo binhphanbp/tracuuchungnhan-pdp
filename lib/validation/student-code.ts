@@ -8,18 +8,12 @@ import { normalizeStudentCode } from "@/lib/utils/normalize";
  *
  * Override at runtime by passing a different pattern to `studentCodeSchema()`.
  */
-export const DEFAULT_STUDENT_CODE_PATTERN = /^PS\d{5,}$/;
 
-export const studentCodeSchema = (
-  pattern: RegExp = DEFAULT_STUDENT_CODE_PATTERN,
-) =>
+export const studentCodeSchema = () =>
   z
     .string()
     .min(1, "Vui lòng nhập mã số sinh viên.")
-    .transform((raw) => normalizeStudentCode(raw))
-    .refine((value) => pattern.test(value), {
-      message: "Mã số sinh viên không hợp lệ. Định dạng đúng: PSxxxxx.",
-    });
+    .transform((raw) => normalizeStudentCode(raw));
 
 export const lookupFormSchema = z.object({
   studentCode: studentCodeSchema(),
