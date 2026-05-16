@@ -84,7 +84,7 @@ export default async function LookupResultPage({
   const issueDate = new Date(cert.issue_date).toLocaleDateString("vi-VN");
 
   return (
-    <ResultShell heading="Đã tìm thấy chứng nhận" tone="success">
+    <ResultShell heading="Chúc mừng bạn đã nhận được chứng nhận!" tone="success">
       <Card className="border-pdp-orange/30 ring-pdp-orange/5 overflow-hidden ring-1">
         {/* Status banner */}
         <div className="border-pdp-orange/20 bg-pdp-orange/5 flex items-center gap-2 border-b px-6 py-3">
